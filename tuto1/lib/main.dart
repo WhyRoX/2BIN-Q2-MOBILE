@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tuto1/product_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Welcome to Flutter',
+      title: 'Welcome to Ma maisonn',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -18,64 +19,34 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          title: const Text('Welcome to Flutter'),
+          title: const Text('Welcome to belgique'),
         ),
         body: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: SizedBox(
-              width: 500,
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      const Text(
-                        "iPhone 13",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15,
-                        ),
-                      ),
-                      Text(
-                        "999 €",
-                        style: TextStyle(
-                          color: Theme.of(context).colorScheme.primary,
-                          fontSize: 18,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 8),
-                  const Text(
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
+          child: Column(
+            children: [
+              ProductWidget(
+                name: "iPhone 15 Pro Max",
+                price: 1479,
+                description:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
                     "Aliquam et risus vel ipsum faucibus ultrices. "
                     "Fusce nec leo nisi. Vestibulum vehicula, "
                     "orci ac varius eleifend, ante erat efficitur tortor, "
                     "quis tincidunt elit ex ut est.",
-                    textAlign: TextAlign.justify,
-                  ),
-                  const SizedBox(height: 150),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      const Expanded(
-                        child: Text(
-                          "Lorem ipsumdzzzdzzzzzzzzzz ipsumdzzzdzzzzzzzzzz",
-                        ),
-                      ),
-                      const SizedBox(width: 8),
-                      Expanded(
-                        child: Text(
-                          "Lorem ipsumdzzzdzzzzzzzzzz zzzzzzzzdzzzzzzzzzzzzzzzzzzzdzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",
-                          textAlign: TextAlign.justify,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+                imagePath: "images/iphone.jpg",
               ),
-            ),
+              ProductWidget(
+                name: "zd",
+                price: 1110,
+                description:
+                "Des jeux ultra-réalistes, ultra-fluides et ultra-immersifs, "
+                    "la carte graphique GeForce RTX 4080 SUPER met à votre "
+                    "disposition les technologies les plus avancées pour "
+                    "vous permettre de jouer dans les meilleures conditions, "
+                    "en très haute résolution ou en Réalité Virtuelle.",
+                imagePath: "images/iphone.jpg",
+              ),
+            ],
           ),
         ),
       ),
