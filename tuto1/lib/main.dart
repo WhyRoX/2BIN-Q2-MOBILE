@@ -31,14 +31,14 @@ class MyApp extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       const Text(
-                        "iPhone 15 Pro Max",
+                        "iPhone 13",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 15,
                         ),
                       ),
                       Text(
-                        "1479 €",
+                        "999 €",
                         style: TextStyle(
                           color: Theme.of(context).colorScheme.primary,
                           fontSize: 18,
@@ -49,12 +49,30 @@ class MyApp extends StatelessWidget {
                   const SizedBox(height: 8),
                   const Text(
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
-                        "Aliquam et risus vel ipsum faucibus ultrices. "
-                        "Fusce nec leo nisi. Vestibulum vehicula, "
-                        "orci ac varius eleifend, ante erat efficitur tortor, "
-                        "quis tincidunt elit ex ut est.",
+                    "Aliquam et risus vel ipsum faucibus ultrices. "
+                    "Fusce nec leo nisi. Vestibulum vehicula, "
+                    "orci ac varius eleifend, ante erat efficitur tortor, "
+                    "quis tincidunt elit ex ut est.",
                     textAlign: TextAlign.justify,
-                  )
+                  ),
+                  const SizedBox(height: 150),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      const Expanded(
+                        child: Text(
+                          "Lorem ipsumdzzzdzzzzzzzzzz ipsumdzzzdzzzzzzzzzz",
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: Text(
+                          "Lorem ipsumdzzzdzzzzzzzzzz zzzzzzzzdzzzzzzzzzzzzzzzzzzzdzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",
+                          textAlign: TextAlign.justify,
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
