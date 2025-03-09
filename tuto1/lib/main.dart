@@ -36,15 +36,15 @@ class MyApp extends StatelessWidget {
                 imagePath: "images/iphone.jpg",
               ),
               ProductWidget(
-                name: "zd",
-                price: 1110,
+                name: "RTX 4080 SUPER",
+                price: 1900,
                 description:
                 "Des jeux ultra-réalistes, ultra-fluides et ultra-immersifs, "
                     "la carte graphique GeForce RTX 4080 SUPER met à votre "
                     "disposition les technologies les plus avancées pour "
                     "vous permettre de jouer dans les meilleures conditions, "
                     "en très haute résolution ou en Réalité Virtuelle.",
-                imagePath: "images/iphone.jpg",
+                imagePath: "images/cg.jpg",
               ),
             ],
           ),
