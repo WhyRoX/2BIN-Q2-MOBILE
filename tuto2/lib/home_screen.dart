@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 import 'contact.dart';
@@ -8,16 +10,26 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final contactRows =
-    defaultContacts.map((contact) => ContactRow(contact: contact)).toList();
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text("Contact list"),
       ),
-      body: ListView(children: contactRows),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Center(
+          child: SizedBox(
+            width: 512,
+            child: ListView.separated(
+              itemCount: defaultContacts.length,
+              separatorBuilder: (context, index) => const Divider(),
+              itemBuilder:
+                  (context, index) =>
+                      ContactRow(contact: defaultContacts[index]),
+            ),
+          ),
+        ),
+      ),
     );
   }
-
 }
