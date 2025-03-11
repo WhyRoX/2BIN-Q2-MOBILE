@@ -20,7 +20,7 @@ final propertiesSell = [
       isSelling: true,
       isFlat: true,
       sqMeters: 100*i*2.34,
-      nbRooms: i + 1,
+      nbRooms: i * 5,
       price: 100000*i,
     ),
 ];

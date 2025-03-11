@@ -26,18 +26,23 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: [
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  "Rentals",
+                  "Rentalsssss",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(width: 8),
+                const SizedBox(width: 15),
                 Switch(
                   value: sales,
+                  inactiveTrackColor: Colors.yellow,
+                  inactiveThumbColor: Colors.blue,
+                  activeColor: Colors.greenAccent,
+                  activeTrackColor: Colors.brown,
                   onChanged: (value) => setState(() => sales = !sales),
                 ),
-                const SizedBox(width: 8),
-                const Text("Sales", style: TextStyle(fontWeight: FontWeight.bold)),
+                const SizedBox(width: 15),
+                const Text("Salessss", style: TextStyle(fontWeight: FontWeight.bold)),
               ],
             ),
             Expanded(
