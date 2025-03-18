@@ -42,7 +42,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   onChanged: (value) => setState(() => sales = !sales),
                 ),
                 const SizedBox(width: 15),
-                const Text("Salessss", style: TextStyle(fontWeight: FontWeight.bold)),
+                const Text(
+                  "Salessss",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
               ],
             ),
             Expanded(
