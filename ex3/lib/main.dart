@@ -1,4 +1,3 @@
-import 'package:ex3/note.dart';
 import 'package:flutter/material.dart';
 
 import 'home_screen.dart';
