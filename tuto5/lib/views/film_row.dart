@@ -11,14 +11,25 @@ class FilmRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text(film.title),
-      subtitle: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      subtitle: Row(
         children: [
-          Text("Directed by ${film.director} - ${film.duration} minutes"),
-          InkWell(
-            onTap: () => launchUrl(Uri.parse(film.link)),
-            child: Text(film.link),
+          Image.network(film.image, width: 100),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(film.title),
+                Text(film.description),
+                Text(
+                  "Directed by ${film.director} - ${film.runningTime} minutes",
+                ),
+                Text("Released on ${film.releaseDate} - ${film.rtScore}%"),
+                InkWell(
+                  onTap: () => launchUrl(Uri.parse(film.url)),
+                  child: Text(film.url),
+                ),
+              ],
+            ),
           ),
         ],
       ),

@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text("Tutoriel 5"),
+        title: const Text("GHBILI :)"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

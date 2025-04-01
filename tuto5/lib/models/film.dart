@@ -1,27 +1,38 @@
 import 'dart:convert';
+import 'dart:math';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 class Film {
-  static const baseUrl = "https://sebstreb.github.io/flutter-fiche-5/films-api";
+  static const baseUrl =
+      "https://sebstreb.github.io/flutter-fiche-5/ghibli-films";
 
-  final int id;
+  final String id;
   final String title;
+  final String image;
+  final String description;
+  final String releaseDate;
   final String director;
-  final int duration;
-  final String link;
+  final String runningTime;
+  final String rtScore;
+  final String url;
 
   const Film({
     required this.id,
     required this.title,
+    required this.image,
+    required this.description,
+    required this.releaseDate,
     required this.director,
-    required this.duration,
-    required this.link,
+    required this.runningTime,
+    required this.rtScore,
+    required this.url,
   });
 
   @override
   String toString() =>
-      'Film: $title, directed by $director, $duration min, $link';
+      'Film: id:$id, $title, directed by $director, $runningTime min, $rtScore/100'
+      '\n$description\nReleased on $releaseDate';
 
   static Future<List<Film>> fetchFilms() async {
     var response = await http.get(Uri.parse("$baseUrl/"));
@@ -29,17 +40,20 @@ class Film {
     if (response.statusCode != 200) {
       throw Exception("Error ${response.statusCode} fetching movies");
     }
-
     return compute((input) {
       final jsonList = jsonDecode(input);
       return jsonList
           .map<Film>(
             (jsonObj) => Film(
               id: jsonObj["id"],
+              image: jsonObj["image"],
               title: jsonObj["title"],
+              description: jsonObj["director"],
+              releaseDate: jsonObj["release_date"],
               director: jsonObj["director"],
-              duration: jsonObj["duration"],
-              link: jsonObj["link"],
+              runningTime: jsonObj["running_time"],
+              rtScore: jsonObj["rt_score"],
+              url: jsonObj["url"],
             ),
           )
           .toList();
@@ -58,9 +72,13 @@ class Film {
     return Film(
       id: jsonObj["id"],
       title: jsonObj["title"],
+      image: jsonObj["image"],
+      description: jsonObj["director"],
+      releaseDate: jsonObj["release_date"],
       director: jsonObj["director"],
-      duration: jsonObj["duration"],
-      link: jsonObj["link"],
+      runningTime: jsonObj["running_time"],
+      rtScore: jsonObj["rt_score"],
+      url: jsonObj["url"],
     );
   }
 }
