@@ -14,7 +14,7 @@ class PostList extends StatelessWidget {
   Widget build(BuildContext context) {
     var model = Provider.of<ThemeViewModel>(context);
     return Scaffold(
-      appBar: navBar(context, 'Posts'),
+      appBar: navBar(context, 'Post'),
       body: Center(child: Text('POSTS LISTO')),
     );
   }
